@@ -35,12 +35,10 @@ namespace hayati
             this.logoutbutton = new System.Windows.Forms.ToolStripMenuItem();
             this.exitbutton = new System.Windows.Forms.ToolStripMenuItem();
             this.laporanmenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.laporandata = new System.Windows.Forms.ToolStripMenuItem();
             this.laporanpenjualan = new System.Windows.Forms.ToolStripMenuItem();
             this.transaksimenu = new System.Windows.Forms.ToolStripMenuItem();
             this.penjualanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mastermenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.kasirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -73,38 +71,31 @@ namespace hayati
             // loginbutton
             // 
             this.loginbutton.Name = "loginbutton";
-            this.loginbutton.Size = new System.Drawing.Size(180, 22);
+            this.loginbutton.Size = new System.Drawing.Size(116, 22);
             this.loginbutton.Text = "Login";
             this.loginbutton.Click += new System.EventHandler(this.loginbutton_Click);
             // 
             // logoutbutton
             // 
             this.logoutbutton.Name = "logoutbutton";
-            this.logoutbutton.Size = new System.Drawing.Size(180, 22);
+            this.logoutbutton.Size = new System.Drawing.Size(116, 22);
             this.logoutbutton.Text = "Logout";
             this.logoutbutton.Click += new System.EventHandler(this.logoutbutton_Click);
             // 
             // exitbutton
             // 
             this.exitbutton.Name = "exitbutton";
-            this.exitbutton.Size = new System.Drawing.Size(180, 22);
+            this.exitbutton.Size = new System.Drawing.Size(116, 22);
             this.exitbutton.Text = "Exit";
             this.exitbutton.Click += new System.EventHandler(this.exitbutton_Click);
             // 
             // laporanmenu
             // 
             this.laporanmenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.laporandata,
             this.laporanpenjualan});
             this.laporanmenu.Name = "laporanmenu";
             this.laporanmenu.Size = new System.Drawing.Size(70, 20);
             this.laporanmenu.Text = "Laporan";
-            // 
-            // laporandata
-            // 
-            this.laporandata.Name = "laporandata";
-            this.laporandata.Size = new System.Drawing.Size(203, 22);
-            this.laporandata.Text = "Laporan Data Master";
             // 
             // laporanpenjualan
             // 
@@ -123,23 +114,17 @@ namespace hayati
             // penjualanToolStripMenuItem
             // 
             this.penjualanToolStripMenuItem.Name = "penjualanToolStripMenuItem";
-            this.penjualanToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.penjualanToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.penjualanToolStripMenuItem.Text = "Penjualan";
+            this.penjualanToolStripMenuItem.Click += new System.EventHandler(this.penjualanToolStripMenuItem_Click);
             // 
             // mastermenu
             // 
             this.mastermenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.kasirToolStripMenuItem,
             this.stockToolStripMenuItem});
             this.mastermenu.Name = "mastermenu";
             this.mastermenu.Size = new System.Drawing.Size(59, 20);
             this.mastermenu.Text = "Master";
-            // 
-            // kasirToolStripMenuItem
-            // 
-            this.kasirToolStripMenuItem.Name = "kasirToolStripMenuItem";
-            this.kasirToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
-            this.kasirToolStripMenuItem.Text = "Kasir";
             // 
             // stockToolStripMenuItem
             // 
@@ -167,10 +152,8 @@ namespace hayati
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem laporandata;
         private System.Windows.Forms.ToolStripMenuItem laporanpenjualan;
         private System.Windows.Forms.ToolStripMenuItem penjualanToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem kasirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stockToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem laporanmenu;
         public System.Windows.Forms.ToolStripMenuItem transaksimenu;

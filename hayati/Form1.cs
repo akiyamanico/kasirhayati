@@ -56,8 +56,6 @@ namespace hayati
             {
                 formlogin.Activate();
             }
-            //formlogin = new login();
-            //formlogin.Show();
         }
 
         private void Formlogin_FormClosed(object sender, FormClosedEventArgs e)
@@ -76,6 +74,14 @@ namespace hayati
             login lockedmenu = new login();
             lockedmenu.Show();
             locked();
+        }
+
+        private void penjualanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            penjualan marketting = new penjualan();
+            marketting.Show();
+            MessageBox.Show("Selamat Berjualan");
         }
     }
 }

@@ -21,7 +21,6 @@ namespace hayati
 
         public login()
         {
-            Form1.menu.loginbutton.Enabled = false;
             InitializeComponent();
         }
 
@@ -41,7 +40,7 @@ namespace hayati
                 reader = cmd.ExecuteReader();
                 if (reader.Read()) 
                 {
-                    Form1 connected = new Form1();
+                    penjualan connected = new penjualan();
                     connected.Show();
                     Form1.menu.loginbutton.Enabled = false;
                     Form1.menu.logoutbutton.Enabled = true;
