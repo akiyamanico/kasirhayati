@@ -83,5 +83,11 @@ namespace hayati
             marketting.Show();
             MessageBox.Show("Selamat Berjualan");
         }
+
+        private void stockToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            stockbarang stockinformation = new stockbarang();
+            stockinformation.Show();
+        }
     }
 }

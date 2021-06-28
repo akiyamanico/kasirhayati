@@ -281,7 +281,7 @@ namespace hayati
             // penjualanToolStripMenuItem
             // 
             this.penjualanToolStripMenuItem.Name = "penjualanToolStripMenuItem";
-            this.penjualanToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.penjualanToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.penjualanToolStripMenuItem.Text = "Penjualan";
             // 
             // mastermenu
@@ -295,8 +295,9 @@ namespace hayati
             // stockToolStripMenuItem
             // 
             this.stockToolStripMenuItem.Name = "stockToolStripMenuItem";
-            this.stockToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+            this.stockToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.stockToolStripMenuItem.Text = "Stock";
+            this.stockToolStripMenuItem.Click += new System.EventHandler(this.stockToolStripMenuItem_Click);
             // 
             // penjualan
             // 

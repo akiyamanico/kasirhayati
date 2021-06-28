@@ -105,5 +105,11 @@ namespace hayati
                 MessageBox.Show("Error!" + Environment.NewLine + ex);
             }
         }
+
+        private void stockToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            stockbarang stockinformation = new stockbarang();
+            stockinformation.Show();
+        }
     }
 }

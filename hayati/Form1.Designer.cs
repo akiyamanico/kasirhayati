@@ -100,7 +100,7 @@ namespace hayati
             // laporanpenjualan
             // 
             this.laporanpenjualan.Name = "laporanpenjualan";
-            this.laporanpenjualan.Size = new System.Drawing.Size(203, 22);
+            this.laporanpenjualan.Size = new System.Drawing.Size(187, 22);
             this.laporanpenjualan.Text = "Laporan Penjualan";
             // 
             // transaksimenu
@@ -129,8 +129,9 @@ namespace hayati
             // stockToolStripMenuItem
             // 
             this.stockToolStripMenuItem.Name = "stockToolStripMenuItem";
-            this.stockToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+            this.stockToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.stockToolStripMenuItem.Text = "Stock";
+            this.stockToolStripMenuItem.Click += new System.EventHandler(this.stockToolStripMenuItem_Click);
             // 
             // Form1
             // 
