@@ -32,7 +32,7 @@ namespace hayati
             this.addBtn = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.nama_brg = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.namaBrg = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hrg = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ttl_hrg = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,6 +69,7 @@ namespace hayati
             this.addBtn.TabIndex = 23;
             this.addBtn.Text = "Tambah";
             this.addBtn.UseVisualStyleBackColor = true;
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
             // button2
             // 
@@ -90,7 +91,7 @@ namespace hayati
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nama_brg,
+            this.namaBrg,
             this.qty,
             this.hrg,
             this.ttl_hrg,
@@ -102,12 +103,13 @@ namespace hayati
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1177, 485);
             this.dataGridView1.TabIndex = 17;
+            this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             // 
-            // nama_brg
+            // namaBrg
             // 
-            this.nama_brg.HeaderText = "Nama Barang";
-            this.nama_brg.Name = "nama_brg";
-            this.nama_brg.ReadOnly = true;
+            this.namaBrg.HeaderText = "Nama Barang";
+            this.namaBrg.Name = "namaBrg";
+            this.namaBrg.ReadOnly = true;
             // 
             // qty
             // 
@@ -209,11 +211,12 @@ namespace hayati
             this.barcodeid.Name = "barcodeid";
             this.barcodeid.Size = new System.Drawing.Size(223, 26);
             this.barcodeid.TabIndex = 19;
+            this.barcodeid.KeyDown += new System.Windows.Forms.KeyEventHandler(this.barcodeid_KeyDown);
             // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.menuStrip1.Font = new System.Drawing.Font("Caviar Dreams", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.menuStrip1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.accountmenu,
             this.laporanmenu,
@@ -238,21 +241,21 @@ namespace hayati
             // loginbutton
             // 
             this.loginbutton.Name = "loginbutton";
-            this.loginbutton.Size = new System.Drawing.Size(180, 22);
+            this.loginbutton.Size = new System.Drawing.Size(115, 22);
             this.loginbutton.Text = "Login";
             this.loginbutton.Click += new System.EventHandler(this.loginbutton_Click);
             // 
             // logoutbutton
             // 
             this.logoutbutton.Name = "logoutbutton";
-            this.logoutbutton.Size = new System.Drawing.Size(180, 22);
+            this.logoutbutton.Size = new System.Drawing.Size(115, 22);
             this.logoutbutton.Text = "Logout";
             this.logoutbutton.Click += new System.EventHandler(this.logoutbutton_Click);
             // 
             // exitbutton
             // 
             this.exitbutton.Name = "exitbutton";
-            this.exitbutton.Size = new System.Drawing.Size(180, 22);
+            this.exitbutton.Size = new System.Drawing.Size(115, 22);
             this.exitbutton.Text = "Exit";
             this.exitbutton.Click += new System.EventHandler(this.exitbutton_Click);
             // 
@@ -261,7 +264,7 @@ namespace hayati
             this.laporanmenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.laporanpenjualan});
             this.laporanmenu.Name = "laporanmenu";
-            this.laporanmenu.Size = new System.Drawing.Size(70, 20);
+            this.laporanmenu.Size = new System.Drawing.Size(69, 20);
             this.laporanmenu.Text = "Laporan";
             // 
             // laporanpenjualan
@@ -275,13 +278,13 @@ namespace hayati
             this.transaksimenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.penjualanToolStripMenuItem});
             this.transaksimenu.Name = "transaksimenu";
-            this.transaksimenu.Size = new System.Drawing.Size(72, 20);
+            this.transaksimenu.Size = new System.Drawing.Size(79, 20);
             this.transaksimenu.Text = "Transaksi";
             // 
             // penjualanToolStripMenuItem
             // 
             this.penjualanToolStripMenuItem.Name = "penjualanToolStripMenuItem";
-            this.penjualanToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.penjualanToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.penjualanToolStripMenuItem.Text = "Penjualan";
             // 
             // mastermenu
@@ -289,13 +292,13 @@ namespace hayati
             this.mastermenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.stockToolStripMenuItem});
             this.mastermenu.Name = "mastermenu";
-            this.mastermenu.Size = new System.Drawing.Size(59, 20);
+            this.mastermenu.Size = new System.Drawing.Size(60, 20);
             this.mastermenu.Text = "Master";
             // 
             // stockToolStripMenuItem
             // 
             this.stockToolStripMenuItem.Name = "stockToolStripMenuItem";
-            this.stockToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.stockToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.stockToolStripMenuItem.Text = "Stock";
             this.stockToolStripMenuItem.Click += new System.EventHandler(this.stockToolStripMenuItem_Click);
             // 
@@ -314,6 +317,7 @@ namespace hayati
             this.Controls.Add(this.barcodeid);
             this.Name = "penjualan";
             this.Text = "penjualan";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.penjualan_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -328,12 +332,6 @@ namespace hayati
 
         private System.Windows.Forms.Button addBtn;
         private System.Windows.Forms.Button button2;
-        public System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nama_brg;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qty;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hrg;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ttl_hrg;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Barcode;
         private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.Label harga_barang;
         public System.Windows.Forms.Label nama_barang;
@@ -341,6 +339,7 @@ namespace hayati
         public System.Windows.Forms.Label harga;
         private System.Windows.Forms.TextBox barcodeid;
         private System.Windows.Forms.MenuStrip menuStrip1;
+        public System.Windows.Forms.DataGridView dataGridView1;
         public System.Windows.Forms.ToolStripMenuItem accountmenu;
         public System.Windows.Forms.ToolStripMenuItem loginbutton;
         public System.Windows.Forms.ToolStripMenuItem logoutbutton;
@@ -351,5 +350,10 @@ namespace hayati
         private System.Windows.Forms.ToolStripMenuItem penjualanToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem mastermenu;
         private System.Windows.Forms.ToolStripMenuItem stockToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn namaBrg;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hrg;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ttl_hrg;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Barcode;
     }
 }
