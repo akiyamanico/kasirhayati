@@ -43,6 +43,15 @@ namespace hayati
             Konn.Close();
             dataGridView1.DataSource = mytable;
         }
+        private void emptybox()
+        {
+            textBox1.Text = "";
+            barcode.Text = "";
+            namabarangtb.Text = "";
+            hbtb.Text = "";
+            hjtb.Text = "";
+            stocktb.Text = "";
+        }
 
         private void savedata_Click(object sender, EventArgs e)
         {
@@ -60,6 +69,7 @@ namespace hayati
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Insert data berhasil!");
                     TampilGrid();
+                    emptybox();
                 }
                 catch(Exception X)
                 {
