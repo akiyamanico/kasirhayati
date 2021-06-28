@@ -41,7 +41,7 @@ namespace hayati
                 SqlConnection Konn = Conn.GetConn();
                 try
                 {
-                    cmd = new SqlCommand("insert into tblbarang values('"+ textBox1.Text + "','" + barcode.Text + "','" + namabarangtb.Text + "','" + hbtb.Text + "', '" + hjtb.Text +"', '" +stocktb.Text + "','" + expireddate + "','" +todaydate+"')" ,Konn);
+                    cmd = new SqlCommand("insert into tblbarang values('"+ textBox1.Text + "','" + barcode.Text + "','" + namabarangtb.Text + "','" + hbtb.Text + "', '" + hjtb.Text +"', '" +stocktb.Text + "')" ,Konn);
                     Konn.Open();
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Insert data berhasil!");

@@ -30,14 +30,6 @@ namespace hayati
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idbarang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.barcodebarang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.namabarang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hargabeli = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hargajualbarang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stocktersedia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.expired = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ditambahkan_tanggal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.savedata = new System.Windows.Forms.Button();
             this.printdata = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -53,10 +45,12 @@ namespace hayati
             this.label5 = new System.Windows.Forms.Label();
             this.stocktb = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.expireddate = new System.Windows.Forms.DateTimePicker();
-            this.todaydate = new System.Windows.Forms.DateTimePicker();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.idbarang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.barcodebarang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.namabarang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hargabeli = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hargajualbarang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stocktersedia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,55 +63,13 @@ namespace hayati
             this.namabarang,
             this.hargabeli,
             this.hargajualbarang,
-            this.stocktersedia,
-            this.expired,
-            this.ditambahkan_tanggal});
+            this.stocktersedia});
             this.dataGridView1.Location = new System.Drawing.Point(12, 162);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(823, 238);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // idbarang
-            // 
-            this.idbarang.HeaderText = "id";
-            this.idbarang.Name = "idbarang";
-            // 
-            // barcodebarang
-            // 
-            this.barcodebarang.HeaderText = "barcodeid";
-            this.barcodebarang.Name = "barcodebarang";
-            // 
-            // namabarang
-            // 
-            this.namabarang.HeaderText = "namabarang";
-            this.namabarang.Name = "namabarang";
-            // 
-            // hargabeli
-            // 
-            this.hargabeli.HeaderText = "hargabelibarang";
-            this.hargabeli.Name = "hargabeli";
-            // 
-            // hargajualbarang
-            // 
-            this.hargajualbarang.HeaderText = "hargajual";
-            this.hargajualbarang.Name = "hargajualbarang";
-            // 
-            // stocktersedia
-            // 
-            this.stocktersedia.HeaderText = "stockbarang";
-            this.stocktersedia.Name = "stocktersedia";
-            // 
-            // expired
-            // 
-            this.expired.HeaderText = "expired";
-            this.expired.Name = "expired";
-            // 
-            // ditambahkan_tanggal
-            // 
-            this.ditambahkan_tanggal.HeaderText = "ditambahkan_tanggal";
-            this.ditambahkan_tanggal.Name = "ditambahkan_tanggal";
             // 
             // savedata
             // 
@@ -244,47 +196,41 @@ namespace hayati
             this.label6.TabIndex = 14;
             this.label6.Text = "Stock Barang";
             // 
-            // expireddate
+            // idbarang
             // 
-            this.expireddate.Location = new System.Drawing.Point(285, 84);
-            this.expireddate.Name = "expireddate";
-            this.expireddate.Size = new System.Drawing.Size(200, 23);
-            this.expireddate.TabIndex = 16;
+            this.idbarang.HeaderText = "id";
+            this.idbarang.Name = "idbarang";
             // 
-            // todaydate
+            // barcodebarang
             // 
-            this.todaydate.Location = new System.Drawing.Point(635, 12);
-            this.todaydate.Name = "todaydate";
-            this.todaydate.Size = new System.Drawing.Size(200, 23);
-            this.todaydate.TabIndex = 17;
+            this.barcodebarang.HeaderText = "barcodeid";
+            this.barcodebarang.Name = "barcodebarang";
             // 
-            // label7
+            // namabarang
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(203, 90);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(46, 15);
-            this.label7.TabIndex = 18;
-            this.label7.Text = "Expired";
+            this.namabarang.HeaderText = "namabarang";
+            this.namabarang.Name = "namabarang";
             // 
-            // label8
+            // hargabeli
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(540, 18);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(89, 15);
-            this.label8.TabIndex = 19;
-            this.label8.Text = "Tanggal Hari Ini";
+            this.hargabeli.HeaderText = "hargabelibarang";
+            this.hargabeli.Name = "hargabeli";
+            // 
+            // hargajualbarang
+            // 
+            this.hargajualbarang.HeaderText = "hargajual";
+            this.hargajualbarang.Name = "hargajualbarang";
+            // 
+            // stocktersedia
+            // 
+            this.stocktersedia.HeaderText = "stockbarang";
+            this.stocktersedia.Name = "stocktersedia";
             // 
             // stockbarang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(847, 450);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.todaydate);
-            this.Controls.Add(this.expireddate);
             this.Controls.Add(this.stocktb);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.hjtb);
@@ -315,14 +261,6 @@ namespace hayati
         private System.Windows.Forms.Button savedata;
         private System.Windows.Forms.Button printdata;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idbarang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn barcodebarang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn namabarang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hargabeli;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hargajualbarang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stocktersedia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn expired;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ditambahkan_tanggal;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox barcode;
@@ -335,9 +273,11 @@ namespace hayati
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox stocktb;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker expireddate;
-        private System.Windows.Forms.DateTimePicker todaydate;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idbarang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn barcodebarang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn namabarang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hargabeli;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hargajualbarang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stocktersedia;
     }
 }
