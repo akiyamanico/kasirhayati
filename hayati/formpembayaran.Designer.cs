@@ -62,13 +62,16 @@ namespace hayati
             this.diskoncheckbox.Size = new System.Drawing.Size(15, 14);
             this.diskoncheckbox.TabIndex = 1;
             this.diskoncheckbox.UseVisualStyleBackColor = true;
+            this.diskoncheckbox.CheckStateChanged += new System.EventHandler(this.diskoncheckbox_CheckStateChanged);
             // 
             // totaldiskon
             // 
             this.totaldiskon.Location = new System.Drawing.Point(138, 92);
             this.totaldiskon.Name = "totaldiskon";
+            this.totaldiskon.ReadOnly = true;
             this.totaldiskon.Size = new System.Drawing.Size(120, 23);
             this.totaldiskon.TabIndex = 2;
+            this.totaldiskon.KeyUp += new System.Windows.Forms.KeyEventHandler(this.totaldiskon_KeyUp);
             // 
             // idnotatb
             // 
@@ -91,6 +94,8 @@ namespace hayati
             this.totalbayartb.Name = "totalbayartb";
             this.totalbayartb.Size = new System.Drawing.Size(120, 23);
             this.totalbayartb.TabIndex = 4;
+            this.totalbayartb.KeyDown += new System.Windows.Forms.KeyEventHandler(this.totalbayartb_KeyDown);
+            this.totalbayartb.KeyUp += new System.Windows.Forms.KeyEventHandler(this.totalbayartb_KeyUp);
             // 
             // totalkembaliantb
             // 
@@ -184,6 +189,7 @@ namespace hayati
             this.Controls.Add(this.subtotaltb);
             this.Name = "formpembayaran";
             this.Text = "Pembayaran";
+            this.Load += new System.EventHandler(this.formpembayaran_Load);
             ((System.ComponentModel.ISupportInitialize)(this.totaldiskon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
