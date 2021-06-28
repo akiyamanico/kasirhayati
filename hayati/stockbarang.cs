@@ -77,5 +77,19 @@ namespace hayati
                 }
             }
         }
+
+        private void updatebutton_Click(object sender, EventArgs e)
+        {
+            //TODO Update Stock Barang
+            //
+            //
+        }
+
+        private void refreshbutton_Click(object sender, EventArgs e)
+        {
+            //TODO Update Refresh Barang
+            //
+            //
+        }
     }
 }

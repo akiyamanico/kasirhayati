@@ -54,9 +54,14 @@ namespace hayati
             this.penjualanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mastermenu = new System.Windows.Forms.ToolStripMenuItem();
             this.stockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panelbarcode = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.panelbarcode.SuspendLayout();
             this.SuspendLayout();
             // 
             // addBtn
@@ -206,7 +211,7 @@ namespace hayati
             // 
             this.barcodeid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.barcodeid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.barcodeid.Location = new System.Drawing.Point(910, 194);
+            this.barcodeid.Location = new System.Drawing.Point(910, 199);
             this.barcodeid.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.barcodeid.Name = "barcodeid";
             this.barcodeid.Size = new System.Drawing.Size(223, 26);
@@ -302,11 +307,64 @@ namespace hayati
             this.stockToolStripMenuItem.Text = "Stock";
             this.stockToolStripMenuItem.Click += new System.EventHandler(this.stockToolStripMenuItem_Click);
             // 
+            // panelbarcode
+            // 
+            this.panelbarcode.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelbarcode.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panelbarcode.Controls.Add(this.label1);
+            this.panelbarcode.Controls.Add(this.label2);
+            this.panelbarcode.ForeColor = System.Drawing.Color.Lime;
+            this.panelbarcode.Location = new System.Drawing.Point(36, 35);
+            this.panelbarcode.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.panelbarcode.Name = "panelbarcode";
+            this.panelbarcode.Size = new System.Drawing.Size(729, 76);
+            this.panelbarcode.TabIndex = 23;
+            this.panelbarcode.Paint += new System.Windows.Forms.PaintEventHandler(this.panelbarcode_Paint);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(2327, -57);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(356, 61);
+            this.label1.TabIndex = 1;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoEllipsis = true;
+            this.label2.AutoSize = true;
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(4, 3);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 46);
+            this.label2.TabIndex = 0;
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(35, 199);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(376, 23);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "Tambahkan Barang Secara Manual";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // penjualan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1249, 791);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.panelbarcode);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.addBtn);
             this.Controls.Add(this.button2);
@@ -323,6 +381,8 @@ namespace hayati
             this.panel1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.panelbarcode.ResumeLayout(false);
+            this.panelbarcode.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -337,7 +397,6 @@ namespace hayati
         public System.Windows.Forms.Label nama_barang;
         private System.Windows.Forms.Button button3;
         public System.Windows.Forms.Label harga;
-        private System.Windows.Forms.TextBox barcodeid;
         private System.Windows.Forms.MenuStrip menuStrip1;
         public System.Windows.Forms.DataGridView dataGridView1;
         public System.Windows.Forms.ToolStripMenuItem accountmenu;
@@ -355,5 +414,10 @@ namespace hayati
         private System.Windows.Forms.DataGridViewTextBoxColumn hrg;
         private System.Windows.Forms.DataGridViewTextBoxColumn ttl_hrg;
         private System.Windows.Forms.DataGridViewTextBoxColumn Barcode;
+        private System.Windows.Forms.Panel panelbarcode;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.TextBox barcodeid;
     }
 }

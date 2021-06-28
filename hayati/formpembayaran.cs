@@ -248,8 +248,6 @@ namespace hayati
                 e.Handled = true;
 
             }
-
-
         }
         //
 
@@ -276,18 +274,15 @@ namespace hayati
             else
             {
                 try {
-
                     //Get item from datagridview
                     SqlConnection con = konn.GetConn();
                     foreach (DataGridViewRow row in Dgv.Rows)
                     {
                         con.Open();
-                        SqlCommand cmd = new SqlCommand("update tblbarang set stockbarang = stockbarang - " + int.Parse(row.Cells[1].Value.ToString()) + " where barcodeid = " + row.Cells[4].Value, con);
+                        SqlCommand cmd = new SqlCommand("update tblbarang set stock = stock - " + int.Parse(row.Cells[1].Value.ToString()) + " where barcodeid = " + row.Cells[4].Value, con);
                         cmd.ExecuteReader();
                         con.Close();
                     }
-
-
                     //TODO Menambahkan Update Database Dan Fungsi Print
                     PrintDocument printDoc = new PrintDocument();
                     printDoc.PrintPage += new PrintPageEventHandler(GetPrint);
@@ -297,8 +292,10 @@ namespace hayati
                     totalbayartb.Clear();
                     diskoncheckbox.Checked = false;
                     totalkembaliantb.Clear();
-
                     this.Close();
+                    //TODO Memindahkan Data Penjualan ke TextBox
+                    //
+                    //
                 }
                 catch (Exception ex)
                 {

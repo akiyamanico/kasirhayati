@@ -17,10 +17,6 @@ namespace hayati
     {
         public static penjualan selling;
 
-
-        
-
-
         MenuStrip strip;
         login formlogin;
         koneksi konn = new koneksi();
@@ -77,6 +73,12 @@ namespace hayati
             popupBayar.popTotal = harga.Text;
         }
 
+        public void updatemanual()
+        {
+            barangmanual addmanual = new barangmanual();
+            addmanual.barcode = barcodeid.Text;
+            addmanual.nbarang = barcodeid.Text;
+        }
         public penjualan()
         {
             InitializeComponent();
@@ -137,35 +139,27 @@ namespace hayati
                     int newQty = int.Parse(row.Cells[1].Value.ToString());
                     int value = newQty * int.Parse(row.Cells[2].Value.ToString());
                     row.Cells[3].Value = newQty * int.Parse(row.Cells[2].Value.ToString());
-
                     UpdateTotal();
                     return;
-                }
-                
-               
+                }             
             }
-
             try
             {
-                
 
                 if (string.IsNullOrEmpty(barcodeId))
                 {
                     return;
                 }
                 SqlConnection Conn = konn.GetConn();
-                SqlCommand cmd = new SqlCommand("select barcodeid, namabarang, hargajual from tblbarang where barcodeid = " + barcodeId, Conn);
+                SqlCommand cmd = new SqlCommand("select * from tblbarang where barcodeid=" + barcodeId, Conn);
                 Conn.Open();
                 SqlDataReader row = cmd.ExecuteReader();
-
-
                 if (row.HasRows)
                 {
                     row.Read();
                     string Nama = row["namabarang"].ToString();
                     long Harga = long.Parse(row["hargajual"].ToString());
                     long barcode = long.Parse(row["barcodeid"].ToString());
-
                     DataGridViewRow newRow = new DataGridViewRow();
                     newRow.CreateCells(dataGridView1);
                     newRow.Cells[0].Value = Nama;
@@ -173,13 +167,9 @@ namespace hayati
                     newRow.Cells[2].Value = Harga;
                     newRow.Cells[3].Value = long.Parse(newRow.Cells[2].Value.ToString()) * long.Parse(newRow.Cells[1].Value.ToString());
                     newRow.Cells[4].Value = barcode;
-
                     dataGridView1.Rows.Add(newRow);
-
-
                     nama_barang.Text = Nama.ToString();
                     harga_barang.Text = string.Format(CultureInfo.CreateSpecificCulture("id-id"), "Rp. {0:N0}", Harga);
-
                     UpdateTotal();
                 }
                 else
@@ -188,7 +178,6 @@ namespace hayati
                 }
                 Conn.Close();
                 barcodeid.Clear();
-
             }
             catch (Exception ex)
             {
@@ -197,8 +186,6 @@ namespace hayati
             }
             barcodeid.Clear();
         }
-
- 
         private void barcodeid_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -218,13 +205,14 @@ namespace hayati
                 //popupBayar.view = dataGridView1;
                 GenerateID();
                 popupBayar.Dgv = dataGridView1;
-                popupBayar.Show();
-                popupBayar.FormClosing += new FormClosingEventHandler(this.penjualan_FormClosing);
+                popupBayar.ShowDialog();
+                popupBayar.FormClosing += new FormClosingEventHandler(this.penjualan_FormClosing);       
                 UpdateTotal();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error!" + Environment.NewLine + ex);
+                
             }
         }
 
@@ -234,6 +222,17 @@ namespace hayati
             dataGridView1.Rows.Clear();
             dataGridView1.Refresh();
             nama_barang.Text = "0";
+        }
+
+        private void panelbarcode_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            barangmanual formmanual = new barangmanual();
+            formmanual.Show();
         }
     }
 
