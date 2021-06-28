@@ -18,6 +18,7 @@ namespace hayati
         public stockbarang()
         {
             InitializeComponent();
+            TampilGrid();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -28,6 +29,19 @@ namespace hayati
         private void button3_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void TampilGrid()
+        {
+            SqlConnection Konn = Conn.GetConn();
+            SqlCommand Command = new SqlCommand("select * from tblbarang", Konn);
+            Konn.Open();
+            SqlDataReader reader = Command.ExecuteReader();
+            DataTable mytable = new DataTable();
+
+            mytable.Load(reader);
+            Konn.Close();
+            dataGridView1.DataSource = mytable;
         }
 
         private void savedata_Click(object sender, EventArgs e)
@@ -45,6 +59,7 @@ namespace hayati
                     Konn.Open();
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Insert data berhasil!");
+                    TampilGrid();
                 }
                 catch(Exception X)
                 {

@@ -45,25 +45,12 @@ namespace hayati
             this.label5 = new System.Windows.Forms.Label();
             this.stocktb = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.idbarang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.barcodebarang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.namabarang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hargabeli = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hargajualbarang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stocktersedia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idbarang,
-            this.barcodebarang,
-            this.namabarang,
-            this.hargabeli,
-            this.hargajualbarang,
-            this.stocktersedia});
             this.dataGridView1.Location = new System.Drawing.Point(12, 162);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
@@ -196,36 +183,6 @@ namespace hayati
             this.label6.TabIndex = 14;
             this.label6.Text = "Stock Barang";
             // 
-            // idbarang
-            // 
-            this.idbarang.HeaderText = "id";
-            this.idbarang.Name = "idbarang";
-            // 
-            // barcodebarang
-            // 
-            this.barcodebarang.HeaderText = "barcodeid";
-            this.barcodebarang.Name = "barcodebarang";
-            // 
-            // namabarang
-            // 
-            this.namabarang.HeaderText = "namabarang";
-            this.namabarang.Name = "namabarang";
-            // 
-            // hargabeli
-            // 
-            this.hargabeli.HeaderText = "hargabelibarang";
-            this.hargabeli.Name = "hargabeli";
-            // 
-            // hargajualbarang
-            // 
-            this.hargajualbarang.HeaderText = "hargajual";
-            this.hargajualbarang.Name = "hargajualbarang";
-            // 
-            // stocktersedia
-            // 
-            this.stocktersedia.HeaderText = "stockbarang";
-            this.stocktersedia.Name = "stocktersedia";
-            // 
             // stockbarang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -273,11 +230,5 @@ namespace hayati
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox stocktb;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idbarang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn barcodebarang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn namabarang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hargabeli;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hargajualbarang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stocktersedia;
     }
 }
