@@ -61,6 +61,11 @@ namespace hayati
         {
             this.Close();
         }
+
+        private void login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

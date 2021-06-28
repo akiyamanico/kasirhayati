@@ -113,6 +113,7 @@ namespace hayati
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "login";
             this.Text = "Halaman Login";
+            this.Load += new System.EventHandler(this.login_Load);
             this.Controls.SetChildIndex(this.loginbutton, 0);
             this.Controls.SetChildIndex(this.button2, 0);
             this.Controls.SetChildIndex(this.textBox1, 0);
