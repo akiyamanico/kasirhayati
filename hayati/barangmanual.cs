@@ -25,8 +25,8 @@ public string barcode { get; internal set; }
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //TODO Double Click Barcode atau Nama Barang agar langsung ter input ke textbox
-            //penjualan.barcodeid.Text = dgv1[e.ColumnIndex, e.RowIndex].ToString;
+            var dataIndexNo = dgv1.Rows[e.RowIndex].Index.ToString();
+            string cellValue = dgv1.Rows[e.RowIndex].Cells[1].Value.ToString();
         }
 
         private void barangmanual_Load(object sender, EventArgs e)
