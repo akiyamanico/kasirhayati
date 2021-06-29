@@ -36,10 +36,6 @@ namespace hayati
             get { return this.idnotatb.Text; }
             set { this.idnotatb.Text = value; }
         }
-
-
-
-
         public formpembayaran()
         {
             InitializeComponent();
@@ -297,6 +293,11 @@ namespace hayati
                     //TODO Memindahkan Data Penjualan ke TextBox
                     //
                     //
+                    penjualan formpenjualan = new penjualan();
+                    formpenjualan.harga.Text = "0";
+                    formpenjualan.dataGridView1.Rows.Clear();
+                    formpenjualan.dataGridView1.Refresh();
+                    formpenjualan.nama_barang.Text = "0";
                 }
                 catch (Exception ex)
                 {
