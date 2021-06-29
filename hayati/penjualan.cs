@@ -12,11 +12,11 @@ using System.Globalization;
 
 namespace hayati
 {
-   
+
+ 
     public partial class penjualan : Form
     {
         public static penjualan selling;
-
         MenuStrip strip;
         login formlogin;
         koneksi konn = new koneksi();
@@ -33,7 +33,8 @@ namespace hayati
             mastermenu.Enabled = false;
             selling = this;
         }
-        formpembayaran popupBayar = new formpembayaran();
+
+   formpembayaran popupBayar = new formpembayaran();
 
 
         //TODO Adding much feature right here and blablabla
@@ -68,17 +69,22 @@ namespace hayati
                 sum += Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value);
             }
             harga.Text = string.Format(CultureInfo.CreateSpecificCulture("id-id"), "Rp. {0:N0}", sum);
-            
             popupBayar.popSubtotal = harga.Text;
             popupBayar.popTotal = harga.Text;
         }
-
-        public void updatemanual()
+        public string barcodeupdate
         {
-            barangmanual addmanual = new barangmanual();
-            addmanual.barcode = barcodeid.Text;
-            addmanual.nbarang = barcodeid.Text;
+            get
+                {
+                return this.barcodeid.Text;
+                }
+            set
+            {
+                this.barcodeid.Text = value;
+            }
         }
+        public string strvalue = string.Empty;
+        public static string str1;
         public penjualan()
         {
             InitializeComponent();
@@ -126,7 +132,9 @@ namespace hayati
             UpdateTotal();
 
         }
-
+        protected void insertdata()
+        {
+        }
         private void addBtn_Click(object sender, EventArgs e)
         {
             string barcodeId = barcodeid.Text;
@@ -228,12 +236,21 @@ namespace hayati
         {
 
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        
+        private void setbuttonmanual_Click(object sender, EventArgs e)
         {
             barangmanual formmanual = new barangmanual();
+            formmanual.barcodemanualtb.Text = "Barcode";
             formmanual.Show();
+            this.Hide();
+            while (formmanual.Visible)
+            {
+                Application.DoEvents();
+            }
+            this.Show();
+            this.barcodeid.Text = formmanual.barcodemanualtb.Text;
         }
+
     }
 
 

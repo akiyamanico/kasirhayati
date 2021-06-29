@@ -57,7 +57,7 @@ namespace hayati
             this.panelbarcode = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.setstuffmanual = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -348,22 +348,22 @@ namespace hayati
             this.label2.TabIndex = 0;
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // button1
+            // setstuffmanual
             // 
-            this.button1.Location = new System.Drawing.Point(35, 199);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(376, 23);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "Tambahkan Barang Secara Manual";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.setstuffmanual.Location = new System.Drawing.Point(35, 199);
+            this.setstuffmanual.Name = "setstuffmanual";
+            this.setstuffmanual.Size = new System.Drawing.Size(376, 23);
+            this.setstuffmanual.TabIndex = 25;
+            this.setstuffmanual.Text = "Tambahkan Barang Secara Manual";
+            this.setstuffmanual.UseVisualStyleBackColor = true;
+            this.setstuffmanual.Click += new System.EventHandler(this.setbuttonmanual_Click);
             // 
             // penjualan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1249, 791);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.setstuffmanual);
             this.Controls.Add(this.panelbarcode);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.addBtn);
@@ -417,7 +417,7 @@ namespace hayati
         private System.Windows.Forms.Panel panelbarcode;
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button setstuffmanual;
         public System.Windows.Forms.TextBox barcodeid;
     }
 }

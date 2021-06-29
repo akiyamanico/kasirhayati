@@ -16,18 +16,18 @@ namespace hayati
         private SqlCommand cmd;
         private SqlDataReader rdr;
         koneksi Conn = new koneksi();
-public string barcode { get; internal set; }
-        public string nbarang { get; internal set; }
-
+        penjualan f2 = new penjualan();
+        public DataGridView Dgv { get; set; }
         public barangmanual()
         {
             InitializeComponent();
         }
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            var dataIndexNo = dgv1.Rows[e.RowIndex].Index.ToString();
             string cellValue = dgv1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            barcodemanualtb.Text = cellValue;
         }
+ 
 
         private void barangmanual_Load(object sender, EventArgs e)
         {
@@ -47,6 +47,28 @@ public string barcode { get; internal set; }
                 MessageBox.Show("No Record Found");
             }
         }
+        public string updatestuff
+        {
+            get
+            {
+                return this.barcodemanualtb.Text;
+            }
+            set
+            {
+                this.barcodemanualtb.Text = value;
+            }
+        }
+
+        private void updatedata_Click(object sender, EventArgs e)
+        {
+            f2.barcodeid.Text = barcodemanualtb.Text;
+        }
+        private void barangmanual_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            e.Cancel = true;
+        }
+
     }
 }
 

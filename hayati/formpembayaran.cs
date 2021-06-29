@@ -39,6 +39,7 @@ namespace hayati
 
 
 
+
         public formpembayaran()
         {
             InitializeComponent();
