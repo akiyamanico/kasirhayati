@@ -32,6 +32,7 @@ namespace hayati
             this.dgv1 = new System.Windows.Forms.DataGridView();
             this.updatedata = new System.Windows.Forms.Button();
             this.barcodemanualtb = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,12 +65,22 @@ namespace hayati
             this.barcodemanualtb.Name = "barcodemanualtb";
             this.barcodemanualtb.Size = new System.Drawing.Size(375, 35);
             this.barcodemanualtb.TabIndex = 3;
+            this.barcodemanualtb.KeyUp += new System.Windows.Forms.KeyEventHandler(this.barcodemanualtb_KeyUp);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(21, 98);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(175, 35);
+            this.textBox1.TabIndex = 4;
+            this.textBox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyUp);
             // 
             // barangmanual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1485, 706);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.barcodemanualtb);
             this.Controls.Add(this.updatedata);
             this.Controls.Add(this.dgv1);
@@ -89,5 +100,6 @@ namespace hayati
         private System.Windows.Forms.DataGridView dgv1;
         private System.Windows.Forms.Button updatedata;
         public System.Windows.Forms.TextBox barcodemanualtb;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

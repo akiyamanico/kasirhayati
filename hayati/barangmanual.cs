@@ -69,6 +69,25 @@ namespace hayati
             e.Cancel = true;
         }
 
+        private void barcodemanualtb_KeyUp(object sender, KeyEventArgs e)
+        {
+            
+        }
+
+        private void textBox1_KeyUp(object sender, KeyEventArgs e)
+        {
+            SqlConnection Konn = Conn.GetConn();
+            Konn.Open();
+            SqlCommand cmd = Konn.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from tblbarang where namabarang like('" + barcodemanualtb + "%')";
+            cmd.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            dgv1.DataSource = dt;
+            Konn.Close();
+        }
     }
 }
 
