@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 
 namespace hayati
 {
-    public partial class login : Form1
+    public partial class login : Form
     {
         private SqlCommand cmd;
         private DataSet set;
@@ -57,6 +57,7 @@ namespace hayati
             }
         }
 
+        
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -64,6 +65,17 @@ namespace hayati
 
         private void login_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void textBox2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                loginbutton.PerformClick();
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
 
         }
     }

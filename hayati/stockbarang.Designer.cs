@@ -45,6 +45,8 @@ namespace hayati
             this.label5 = new System.Windows.Forms.Label();
             this.stocktb = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.updatebutton = new System.Windows.Forms.Button();
+            this.refreshbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -183,11 +185,33 @@ namespace hayati
             this.label6.TabIndex = 14;
             this.label6.Text = "Stock Barang";
             // 
+            // updatebutton
+            // 
+            this.updatebutton.Location = new System.Drawing.Point(204, 415);
+            this.updatebutton.Name = "updatebutton";
+            this.updatebutton.Size = new System.Drawing.Size(75, 23);
+            this.updatebutton.TabIndex = 16;
+            this.updatebutton.Text = "Update";
+            this.updatebutton.UseVisualStyleBackColor = true;
+            this.updatebutton.Click += new System.EventHandler(this.updatebutton_Click);
+            // 
+            // refreshbutton
+            // 
+            this.refreshbutton.Location = new System.Drawing.Point(300, 415);
+            this.refreshbutton.Name = "refreshbutton";
+            this.refreshbutton.Size = new System.Drawing.Size(75, 23);
+            this.refreshbutton.TabIndex = 17;
+            this.refreshbutton.Text = "Refresh";
+            this.refreshbutton.UseVisualStyleBackColor = true;
+            this.refreshbutton.Click += new System.EventHandler(this.refreshbutton_Click);
+            // 
             // stockbarang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(847, 450);
+            this.Controls.Add(this.refreshbutton);
+            this.Controls.Add(this.updatebutton);
             this.Controls.Add(this.stocktb);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.hjtb);
@@ -230,5 +254,7 @@ namespace hayati
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox stocktb;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button updatebutton;
+        private System.Windows.Forms.Button refreshbutton;
     }
 }

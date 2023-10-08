@@ -32,7 +32,7 @@ namespace hayati
             this.addBtn = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.nama_brg = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.namaBrg = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hrg = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ttl_hrg = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,9 +54,14 @@ namespace hayati
             this.penjualanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mastermenu = new System.Windows.Forms.ToolStripMenuItem();
             this.stockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panelbarcode = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.setstuffmanual = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.panelbarcode.SuspendLayout();
             this.SuspendLayout();
             // 
             // addBtn
@@ -69,6 +74,7 @@ namespace hayati
             this.addBtn.TabIndex = 23;
             this.addBtn.Text = "Tambah";
             this.addBtn.UseVisualStyleBackColor = true;
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
             // button2
             // 
@@ -84,13 +90,13 @@ namespace hayati
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nama_brg,
+            this.namaBrg,
             this.qty,
             this.hrg,
             this.ttl_hrg,
@@ -102,12 +108,13 @@ namespace hayati
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1177, 485);
             this.dataGridView1.TabIndex = 17;
+            this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             // 
-            // nama_brg
+            // namaBrg
             // 
-            this.nama_brg.HeaderText = "Nama Barang";
-            this.nama_brg.Name = "nama_brg";
-            this.nama_brg.ReadOnly = true;
+            this.namaBrg.HeaderText = "Nama Barang";
+            this.namaBrg.Name = "namaBrg";
+            this.namaBrg.ReadOnly = true;
             // 
             // qty
             // 
@@ -136,7 +143,7 @@ namespace hayati
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.Controls.Add(this.harga_barang);
@@ -161,7 +168,7 @@ namespace hayati
             // 
             // nama_barang
             // 
-            this.nama_barang.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.nama_barang.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.nama_barang.AutoEllipsis = true;
             this.nama_barang.AutoSize = true;
@@ -204,16 +211,17 @@ namespace hayati
             // 
             this.barcodeid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.barcodeid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.barcodeid.Location = new System.Drawing.Point(910, 194);
+            this.barcodeid.Location = new System.Drawing.Point(910, 199);
             this.barcodeid.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.barcodeid.Name = "barcodeid";
             this.barcodeid.Size = new System.Drawing.Size(223, 26);
             this.barcodeid.TabIndex = 19;
+            this.barcodeid.KeyDown += new System.Windows.Forms.KeyEventHandler(this.barcodeid_KeyDown);
             // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.menuStrip1.Font = new System.Drawing.Font("Caviar Dreams", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.menuStrip1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.accountmenu,
             this.laporanmenu,
@@ -238,21 +246,21 @@ namespace hayati
             // loginbutton
             // 
             this.loginbutton.Name = "loginbutton";
-            this.loginbutton.Size = new System.Drawing.Size(180, 22);
+            this.loginbutton.Size = new System.Drawing.Size(115, 22);
             this.loginbutton.Text = "Login";
             this.loginbutton.Click += new System.EventHandler(this.loginbutton_Click);
             // 
             // logoutbutton
             // 
             this.logoutbutton.Name = "logoutbutton";
-            this.logoutbutton.Size = new System.Drawing.Size(180, 22);
+            this.logoutbutton.Size = new System.Drawing.Size(115, 22);
             this.logoutbutton.Text = "Logout";
             this.logoutbutton.Click += new System.EventHandler(this.logoutbutton_Click);
             // 
             // exitbutton
             // 
             this.exitbutton.Name = "exitbutton";
-            this.exitbutton.Size = new System.Drawing.Size(180, 22);
+            this.exitbutton.Size = new System.Drawing.Size(115, 22);
             this.exitbutton.Text = "Exit";
             this.exitbutton.Click += new System.EventHandler(this.exitbutton_Click);
             // 
@@ -261,7 +269,7 @@ namespace hayati
             this.laporanmenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.laporanpenjualan});
             this.laporanmenu.Name = "laporanmenu";
-            this.laporanmenu.Size = new System.Drawing.Size(70, 20);
+            this.laporanmenu.Size = new System.Drawing.Size(69, 20);
             this.laporanmenu.Text = "Laporan";
             // 
             // laporanpenjualan
@@ -275,13 +283,13 @@ namespace hayati
             this.transaksimenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.penjualanToolStripMenuItem});
             this.transaksimenu.Name = "transaksimenu";
-            this.transaksimenu.Size = new System.Drawing.Size(72, 20);
+            this.transaksimenu.Size = new System.Drawing.Size(79, 20);
             this.transaksimenu.Text = "Transaksi";
             // 
             // penjualanToolStripMenuItem
             // 
             this.penjualanToolStripMenuItem.Name = "penjualanToolStripMenuItem";
-            this.penjualanToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.penjualanToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.penjualanToolStripMenuItem.Text = "Penjualan";
             // 
             // mastermenu
@@ -289,21 +297,74 @@ namespace hayati
             this.mastermenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.stockToolStripMenuItem});
             this.mastermenu.Name = "mastermenu";
-            this.mastermenu.Size = new System.Drawing.Size(59, 20);
+            this.mastermenu.Size = new System.Drawing.Size(60, 20);
             this.mastermenu.Text = "Master";
             // 
             // stockToolStripMenuItem
             // 
             this.stockToolStripMenuItem.Name = "stockToolStripMenuItem";
-            this.stockToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.stockToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.stockToolStripMenuItem.Text = "Stock";
             this.stockToolStripMenuItem.Click += new System.EventHandler(this.stockToolStripMenuItem_Click);
+            // 
+            // panelbarcode
+            // 
+            this.panelbarcode.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelbarcode.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panelbarcode.Controls.Add(this.label1);
+            this.panelbarcode.Controls.Add(this.label2);
+            this.panelbarcode.ForeColor = System.Drawing.Color.Lime;
+            this.panelbarcode.Location = new System.Drawing.Point(36, 35);
+            this.panelbarcode.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.panelbarcode.Name = "panelbarcode";
+            this.panelbarcode.Size = new System.Drawing.Size(729, 76);
+            this.panelbarcode.TabIndex = 23;
+            this.panelbarcode.Paint += new System.Windows.Forms.PaintEventHandler(this.panelbarcode_Paint);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(2327, -57);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(356, 61);
+            this.label1.TabIndex = 1;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoEllipsis = true;
+            this.label2.AutoSize = true;
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(4, 3);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 46);
+            this.label2.TabIndex = 0;
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // setstuffmanual
+            // 
+            this.setstuffmanual.Location = new System.Drawing.Point(35, 199);
+            this.setstuffmanual.Name = "setstuffmanual";
+            this.setstuffmanual.Size = new System.Drawing.Size(376, 23);
+            this.setstuffmanual.TabIndex = 25;
+            this.setstuffmanual.Text = "Tambahkan Barang Secara Manual";
+            this.setstuffmanual.UseVisualStyleBackColor = true;
+            this.setstuffmanual.Click += new System.EventHandler(this.setbuttonmanual_Click);
             // 
             // penjualan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1249, 791);
+            this.Controls.Add(this.setstuffmanual);
+            this.Controls.Add(this.panelbarcode);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.addBtn);
             this.Controls.Add(this.button2);
@@ -314,11 +375,14 @@ namespace hayati
             this.Controls.Add(this.barcodeid);
             this.Name = "penjualan";
             this.Text = "penjualan";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.penjualan_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.panelbarcode.ResumeLayout(false);
+            this.panelbarcode.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -328,19 +392,13 @@ namespace hayati
 
         private System.Windows.Forms.Button addBtn;
         private System.Windows.Forms.Button button2;
-        public System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nama_brg;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qty;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hrg;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ttl_hrg;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Barcode;
         private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.Label harga_barang;
         public System.Windows.Forms.Label nama_barang;
         private System.Windows.Forms.Button button3;
         public System.Windows.Forms.Label harga;
-        private System.Windows.Forms.TextBox barcodeid;
         private System.Windows.Forms.MenuStrip menuStrip1;
+        public System.Windows.Forms.DataGridView dataGridView1;
         public System.Windows.Forms.ToolStripMenuItem accountmenu;
         public System.Windows.Forms.ToolStripMenuItem loginbutton;
         public System.Windows.Forms.ToolStripMenuItem logoutbutton;
@@ -351,5 +409,15 @@ namespace hayati
         private System.Windows.Forms.ToolStripMenuItem penjualanToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem mastermenu;
         private System.Windows.Forms.ToolStripMenuItem stockToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn namaBrg;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hrg;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ttl_hrg;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Barcode;
+        private System.Windows.Forms.Panel panelbarcode;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button setstuffmanual;
+        public System.Windows.Forms.TextBox barcodeid;
     }
 }

@@ -43,6 +43,8 @@ namespace hayati
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.totaldiskon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,13 +64,16 @@ namespace hayati
             this.diskoncheckbox.Size = new System.Drawing.Size(15, 14);
             this.diskoncheckbox.TabIndex = 1;
             this.diskoncheckbox.UseVisualStyleBackColor = true;
+            this.diskoncheckbox.CheckStateChanged += new System.EventHandler(this.diskoncheckbox_CheckStateChanged);
             // 
             // totaldiskon
             // 
             this.totaldiskon.Location = new System.Drawing.Point(138, 92);
             this.totaldiskon.Name = "totaldiskon";
+            this.totaldiskon.ReadOnly = true;
             this.totaldiskon.Size = new System.Drawing.Size(120, 23);
             this.totaldiskon.TabIndex = 2;
+            this.totaldiskon.KeyUp += new System.Windows.Forms.KeyEventHandler(this.totaldiskon_KeyUp);
             // 
             // idnotatb
             // 
@@ -91,6 +96,8 @@ namespace hayati
             this.totalbayartb.Name = "totalbayartb";
             this.totalbayartb.Size = new System.Drawing.Size(120, 23);
             this.totalbayartb.TabIndex = 4;
+            this.totalbayartb.KeyDown += new System.Windows.Forms.KeyEventHandler(this.totalbayartb_KeyDown);
+            this.totalbayartb.KeyUp += new System.Windows.Forms.KeyEventHandler(this.totalbayartb_KeyUp);
             // 
             // totalkembaliantb
             // 
@@ -101,7 +108,7 @@ namespace hayati
             // 
             // bayar
             // 
-            this.bayar.Location = new System.Drawing.Point(92, 208);
+            this.bayar.Location = new System.Drawing.Point(255, 211);
             this.bayar.Name = "bayar";
             this.bayar.Size = new System.Drawing.Size(75, 23);
             this.bayar.TabIndex = 7;
@@ -163,11 +170,30 @@ namespace hayati
             this.label6.TabIndex = 13;
             this.label6.Text = "Kembalian";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(305, 63);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(223, 110);
+            this.textBox1.TabIndex = 14;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(305, 37);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(90, 15);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "List yang terjual";
+            // 
             // formpembayaran
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(267, 246);
+            this.ClientSize = new System.Drawing.Size(575, 246);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -184,6 +210,7 @@ namespace hayati
             this.Controls.Add(this.subtotaltb);
             this.Name = "formpembayaran";
             this.Text = "Pembayaran";
+            this.Load += new System.EventHandler(this.formpembayaran_Load);
             ((System.ComponentModel.ISupportInitialize)(this.totaldiskon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -206,5 +233,7 @@ namespace hayati
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label7;
     }
 }
